@@ -9,19 +9,46 @@
 import SwiftUI
 
 struct DefaultActivityIndicator: View {
+    enum Style {
+        case medium
+        case large
+        
+        var scale: CGFloat {
+            switch self {
+            case .medium: return 1
+            case .large: return 1.5
+            }
+        }
+    }
+    
     @State private var isAnimating = false
+    
+    let style: Style
+    
+    public init(style: Style) {
+        self.style = style
+    }
     
     var body: some View {
         Replicator(
             Capsule(style: .circular)
-                .offset(x: -1.5, y: -14)
-                .fill(Color.activityIndicator.opacity(isAnimating ? 0.1 : 1))
-                .frame(width: 3, height: 8)
+                .offset(
+                    x: -1.25 * style.scale,
+                    y: -9.5 * style.scale
+                )
+                .fill(
+                    Color.activityIndicator
+                        .opacity(isAnimating ? 0.1 : 1)
+                )
+                .frame(
+                    width: 2.5 * style.scale,
+                    height: 6 * style.scale
+                )
         )
-        .repeatCount(12)
-        .repeatDelay(1.6/12)
-        .repeatTransform(.rotateWithDividing(12))
-        .animation(.linear(duration: 0.8)
+        .repeatCount(8)
+        .repeatDelay(1.2/8)
+        .repeatTransform(.rotateWithDividing(8))
+        .animation(.linear(duration: 0.6)
                     .repeatForever())
         .onAppear(perform: {
             self.isAnimating = true
@@ -31,6 +58,6 @@ struct DefaultActivityIndicator: View {
 
 struct ActivityIndicator_Previews: PreviewProvider {
     static var previews: some View {
-        DefaultActivityIndicator()
+        DefaultActivityIndicator(style: .medium)
     }
 }

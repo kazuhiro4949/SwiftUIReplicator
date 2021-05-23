@@ -26,4 +26,4 @@ DerivedData/
 /*.gcno
 
 .DS_Store
-./**/IDEWorkspaceChecks.plist
+IDEWorkspaceChecks.plist
