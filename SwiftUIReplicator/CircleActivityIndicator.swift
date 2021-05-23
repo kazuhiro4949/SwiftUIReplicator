@@ -17,8 +17,8 @@ public struct CircleActivityIndicator: View {
         withAnimation {
             Replicator(
                 Circle()
-                    .fill(Color.black.opacity(isAnimating ? 0.1 : 1))
-                    .circulate(width: 10, height: 10)
+                    .fill(Color.accentColor.opacity(isAnimating ? 0.1 : 1))
+                    .circulate(width: 8, height: 8, ratio: 1.4)
             )
             .repeatCount(8)
             .repeatTransform(.rotateWithDividing(8))
@@ -35,5 +35,6 @@ public struct CircleActivityIndicator: View {
 struct CircleActivityIndicator_Previews: PreviewProvider {
     static var previews: some View {
         CircleActivityIndicator()
+            .accentColor(.gray)
     }
 }

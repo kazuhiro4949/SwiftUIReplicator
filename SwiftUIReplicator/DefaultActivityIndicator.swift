@@ -48,8 +48,10 @@ struct DefaultActivityIndicator: View {
         .repeatCount(8)
         .repeatDelay(1.2/8)
         .repeatTransform(.rotateWithDividing(8))
-        .animation(.linear(duration: 0.6)
-                    .repeatForever())
+        .animation(
+            .linear(duration: 0.6)
+                .repeatForever()
+        )
         .onAppear(perform: {
             self.isAnimating = true
         })
