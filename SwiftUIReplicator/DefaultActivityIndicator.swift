@@ -15,7 +15,7 @@ struct DefaultActivityIndicator: View {
         Replicator(
             Capsule(style: .circular)
                 .offset(x: -1.5, y: -14)
-                .fill(Color(.lightGray).opacity(isAnimating ? 0.1 : 1))
+                .fill(Color.activityIndicator.opacity(isAnimating ? 0.1 : 1))
                 .frame(width: 3, height: 8)
         )
         .repeatCount(12)

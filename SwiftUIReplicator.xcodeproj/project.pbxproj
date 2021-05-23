@@ -15,6 +15,7 @@
 		30534617265A63E500992676 /* CircleActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30534616265A63E500992676 /* CircleActivityIndicator.swift */; };
 		30534619265A673C00992676 /* CirculateModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30534618265A673C00992676 /* CirculateModifier.swift */; };
 		3053461B265A676C00992676 /* CGAffineTransform+SyntaxSugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3053461A265A676C00992676 /* CGAffineTransform+SyntaxSugar.swift */; };
+		3053461D265A6BC500992676 /* Color+Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3053461C265A6BC500992676 /* Color+Static.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		30534616265A63E500992676 /* CircleActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleActivityIndicator.swift; sourceTree = "<group>"; };
 		30534618265A673C00992676 /* CirculateModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirculateModifier.swift; sourceTree = "<group>"; };
 		3053461A265A676C00992676 /* CGAffineTransform+SyntaxSugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGAffineTransform+SyntaxSugar.swift"; sourceTree = "<group>"; };
+		3053461C265A6BC500992676 /* Color+Static.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Static.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				30534616265A63E500992676 /* CircleActivityIndicator.swift */,
 				30534618265A673C00992676 /* CirculateModifier.swift */,
 				3053461A265A676C00992676 /* CGAffineTransform+SyntaxSugar.swift */,
+				3053461C265A6BC500992676 /* Color+Static.swift */,
 				305345C0265A409400992676 /* Info.plist */,
 			);
 			path = SwiftUIReplicator;
@@ -213,6 +216,7 @@
 				30534615265A5DFB00992676 /* DefaultActivityIndicator.swift in Sources */,
 				30534619265A673C00992676 /* CirculateModifier.swift in Sources */,
 				305345D7265A40AC00992676 /* Replicator.swift in Sources */,
+				3053461D265A6BC500992676 /* Color+Static.swift in Sources */,
 				3053461B265A676C00992676 /* CGAffineTransform+SyntaxSugar.swift in Sources */,
 				30534617265A63E500992676 /* CircleActivityIndicator.swift in Sources */,
 			);
