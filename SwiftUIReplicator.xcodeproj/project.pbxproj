@@ -11,6 +11,8 @@
 		305345CB265A409500992676 /* SwiftUIReplicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305345CA265A409500992676 /* SwiftUIReplicatorTests.swift */; };
 		305345CD265A409500992676 /* SwiftUIReplicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 305345BF265A409400992676 /* SwiftUIReplicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		305345D7265A40AC00992676 /* Replicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305345D6265A40AC00992676 /* Replicator.swift */; };
+		30534615265A5DFB00992676 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30534614265A5DFB00992676 /* ActivityIndicator.swift */; };
+		30534617265A63E500992676 /* CircleActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30534616265A63E500992676 /* CircleActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,8 @@
 		305345CA265A409500992676 /* SwiftUIReplicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIReplicatorTests.swift; sourceTree = "<group>"; };
 		305345CC265A409500992676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		305345D6265A40AC00992676 /* Replicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Replicator.swift; sourceTree = "<group>"; };
+		30534614265A5DFB00992676 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		30534616265A63E500992676 /* CircleActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 			children = (
 				305345BF265A409400992676 /* SwiftUIReplicator.h */,
 				305345D6265A40AC00992676 /* Replicator.swift */,
+				30534614265A5DFB00992676 /* ActivityIndicator.swift */,
+				30534616265A63E500992676 /* CircleActivityIndicator.swift */,
 				305345C0265A409400992676 /* Info.plist */,
 			);
 			path = SwiftUIReplicator;
@@ -198,7 +204,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30534615265A5DFB00992676 /* ActivityIndicator.swift in Sources */,
 				305345D7265A40AC00992676 /* Replicator.swift in Sources */,
+				30534617265A63E500992676 /* CircleActivityIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
