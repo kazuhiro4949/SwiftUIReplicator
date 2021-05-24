@@ -14,21 +14,19 @@ public struct CircleActivityIndicator: View {
     public init() {}
     
     public var body: some View {
-        withAnimation {
-            Replicator(
-                Circle()
-                    .fill(Color.accentColor.opacity(isAnimating ? 0.1 : 1))
-                    .circulate(width: 8, height: 8, ratio: 1.4)
-            )
-            .repeatCount(8)
-            .repeatTransform(.rotateWithDividing(8))
-            .repeatDelay(2/8)
-            .animation(.linear(duration: 1)
-                        .repeatForever())
-            .onAppear(perform: {
-                self.isAnimating = true
-            })
-        }
+        Replicator(
+            Circle()
+                .frame(width: 10, height: 10)
+                .offset(x: -20, y: isAnimating ? -5 : 0)
+        )
+        .repeatCount(4)
+        .repeatTransform(CGAffineTransform(translationX: 18, y: 0))
+        .repeatDelay(0.6/4)
+        .animation(.linear(duration: 0.5)
+                    .repeatForever())
+        .onAppear(perform: {
+            self.isAnimating = true
+        })
     }
 }
 
