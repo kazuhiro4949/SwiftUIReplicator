@@ -23,7 +23,8 @@ public struct CircleActivityIndicator: View {
         .repeatCount(4)
         .repeatTransform(CGAffineTransform(translationX: 18, y: 0))
         .repeatDelay(0.6/4)
-        .animation(.linear(duration: 0.5)
+        .animation(.linear(duration: 0.3)
+                    .delay(0.3)
                     .repeatForever())
         .onAppear(perform: {
             self.isAnimating = true

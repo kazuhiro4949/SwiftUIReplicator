@@ -21,7 +21,7 @@ struct CircleInLineIndicator: View {
                 .scaleEffect(isAnimating ? 0.3 : 1)
         )
         .repeatCount(count)
-        .repeatTransform(CGAffineTransform(translationX: size, y: 0))
+        .repeatTransform(CGAffineTransform(translationX: size + 5, y: 0))
         .repeatDelay(0.8/Double(count))
         .animation(.linear(duration: 0.5)
                     .delay(0.3)
@@ -36,5 +36,6 @@ struct CircleInLineIndicator: View {
 struct CircleInLineIndicator_Previews: PreviewProvider {
     static var previews: some View {
         CircleInLineIndicator()
+            .accentColor(.red)
     }
 }
