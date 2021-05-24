@@ -18,6 +18,7 @@
 		3053461D265A6BC500992676 /* Color+Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3053461C265A6BC500992676 /* Color+Static.swift */; };
 		30534697265BBD6400992676 /* SwiftUIReplicatorContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30534696265BBD6400992676 /* SwiftUIReplicatorContent.swift */; };
 		3053469D265BC37300992676 /* StickActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3053469C265BC37300992676 /* StickActivityIndicator.swift */; };
+		3053469F265BDF5900992676 /* CircleInLineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3053469E265BDF5900992676 /* CircleInLineIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		3053461C265A6BC500992676 /* Color+Static.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Static.swift"; sourceTree = "<group>"; };
 		30534696265BBD6400992676 /* SwiftUIReplicatorContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIReplicatorContent.swift; sourceTree = "<group>"; };
 		3053469C265BC37300992676 /* StickActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickActivityIndicator.swift; sourceTree = "<group>"; };
+		3053469E265BDF5900992676 /* CircleInLineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleInLineIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				30534614265A5DFB00992676 /* DefaultActivityIndicator.swift */,
 				30534616265A63E500992676 /* CircleActivityIndicator.swift */,
 				3053469C265BC37300992676 /* StickActivityIndicator.swift */,
+				3053469E265BDF5900992676 /* CircleInLineIndicator.swift */,
 				30534618265A673C00992676 /* CirculateModifier.swift */,
 				3053461A265A676C00992676 /* CGAffineTransform+SyntaxSugar.swift */,
 				3053461C265A6BC500992676 /* Color+Static.swift */,
@@ -225,6 +228,7 @@
 				3053461D265A6BC500992676 /* Color+Static.swift in Sources */,
 				30534697265BBD6400992676 /* SwiftUIReplicatorContent.swift in Sources */,
 				3053461B265A676C00992676 /* CGAffineTransform+SyntaxSugar.swift in Sources */,
+				3053469F265BDF5900992676 /* CircleInLineIndicator.swift in Sources */,
 				30534617265A63E500992676 /* CircleActivityIndicator.swift in Sources */,
 				3053469D265BC37300992676 /* StickActivityIndicator.swift in Sources */,
 			);
