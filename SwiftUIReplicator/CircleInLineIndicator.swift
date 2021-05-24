@@ -29,7 +29,7 @@ struct CircleInLineIndicator: View {
         .onAppear(perform: {
             self.isAnimating = true
         })
-        .offset(x: -(size * CGFloat(count)/2), y: 0)
+        .offset(x: -22.5, y: 0)
     }
 }
 

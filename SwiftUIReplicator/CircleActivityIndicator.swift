@@ -18,7 +18,7 @@ public struct CircleActivityIndicator: View {
             Circle()
                 .fill(Color.accentColor)
                 .frame(width: 10, height: 10)
-                .offset(x: -20, y: isAnimating ? -5 : 0)
+                .offset(x: 0, y: isAnimating ? -5 : 0)
         )
         .repeatCount(4)
         .repeatTransform(CGAffineTransform(translationX: 18, y: 0))
@@ -29,6 +29,7 @@ public struct CircleActivityIndicator: View {
         .onAppear(perform: {
             self.isAnimating = true
         })
+        .offset(x: -26, y: 0)
     }
 }
 

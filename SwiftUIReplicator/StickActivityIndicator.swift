@@ -18,7 +18,6 @@ public struct StickActivityIndicator: View {
             Rectangle()
                 .fill(Color.accentColor)
                 .frame(width: 8, height: 26)
-                .offset(x: -16, y: 0)
                 .scaleEffect(CGSize(width: 1.0, height: isAnimating ? 1.5 : 1.0))
         )
         .repeatCount(3)
@@ -30,6 +29,7 @@ public struct StickActivityIndicator: View {
         .onAppear(perform: {
             self.isAnimating = true
         })
+        .offset(x: -12, y: 0)
     }
 }
 
