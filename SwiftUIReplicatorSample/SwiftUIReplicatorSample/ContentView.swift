@@ -11,7 +11,7 @@ import SwiftUIReplicator
 
 struct ContentView: View {
     var body: some View {
-        CircleActivityIndicator()
+        StickActivityIndicator()
     }
 }
 

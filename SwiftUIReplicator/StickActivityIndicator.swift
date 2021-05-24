@@ -8,10 +8,12 @@
 
 import SwiftUI
 
-struct StickActivityIndicator: View {
+public struct StickActivityIndicator: View {
     @State private var isAnimating = false
     
-    var body: some View {
+    public init() {}
+    
+    public var body: some View {
         Replicator(
             Rectangle()
                 .fill(Color.accentColor)
