@@ -16,6 +16,7 @@ public struct CircleActivityIndicator: View {
     public var body: some View {
         Replicator(
             Circle()
+                .fill(Color.accentColor)
                 .frame(width: 10, height: 10)
                 .offset(x: -20, y: isAnimating ? -5 : 0)
         )
