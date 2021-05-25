@@ -33,7 +33,8 @@ struct DefaultActivityIndicator: View {
         Replicator(
             Capsule(style: .circular)
                 .fill(
-                    Color.activityIndicator
+                    Color
+                        .activityIndicator
                         .opacity(isAnimating ? 0.1 : 1)
                 )
                 .frame(

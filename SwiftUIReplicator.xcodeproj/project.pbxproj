@@ -19,6 +19,7 @@
 		30534697265BBD6400992676 /* SwiftUIReplicatorContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30534696265BBD6400992676 /* SwiftUIReplicatorContent.swift */; };
 		3053469D265BC37300992676 /* StickActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3053469C265BC37300992676 /* StickActivityIndicator.swift */; };
 		3053469F265BDF5900992676 /* CircleInLineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3053469E265BDF5900992676 /* CircleInLineIndicator.swift */; };
+		305346A1265D1F4A00992676 /* RotatedCircleActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305346A0265D1F4A00992676 /* RotatedCircleActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		30534696265BBD6400992676 /* SwiftUIReplicatorContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIReplicatorContent.swift; sourceTree = "<group>"; };
 		3053469C265BC37300992676 /* StickActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickActivityIndicator.swift; sourceTree = "<group>"; };
 		3053469E265BDF5900992676 /* CircleInLineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleInLineIndicator.swift; sourceTree = "<group>"; };
+		305346A0265D1F4A00992676 /* RotatedCircleActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatedCircleActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				305345BF265A409400992676 /* SwiftUIReplicator.h */,
 				305345D6265A40AC00992676 /* Replicator.swift */,
 				30534614265A5DFB00992676 /* DefaultActivityIndicator.swift */,
+				305346A0265D1F4A00992676 /* RotatedCircleActivityIndicator.swift */,
 				30534616265A63E500992676 /* CircleActivityIndicator.swift */,
 				3053469C265BC37300992676 /* StickActivityIndicator.swift */,
 				3053469E265BDF5900992676 /* CircleInLineIndicator.swift */,
@@ -224,6 +227,7 @@
 			files = (
 				30534615265A5DFB00992676 /* DefaultActivityIndicator.swift in Sources */,
 				30534619265A673C00992676 /* CirculateModifier.swift in Sources */,
+				305346A1265D1F4A00992676 /* RotatedCircleActivityIndicator.swift in Sources */,
 				305345D7265A40AC00992676 /* Replicator.swift in Sources */,
 				3053461D265A6BC500992676 /* Color+Static.swift in Sources */,
 				30534697265BBD6400992676 /* SwiftUIReplicatorContent.swift in Sources */,
