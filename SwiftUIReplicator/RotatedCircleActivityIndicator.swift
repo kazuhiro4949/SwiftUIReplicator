@@ -20,23 +20,23 @@ public struct RotatedCircleActivityIndicator: View {
                     Color.accentColor
                 )
                 .frame(
-                    width: 10,
-                    height: 10
+                    width: 6,
+                    height: 6
                 )
-                .scaleEffect(CGSize(width: isAnimating ? 1.2 : 0.5, height:  isAnimating ? 1.2: 0.5))
+                .scaleEffect(CGSize(width: isAnimating ? 1.4 : 0.8, height:  isAnimating ? 1.4: 0.8))
                 .transformEffect(
                     .init(
                         translationX: -5,
-                        y:  28
+                        y:  16
                     )
                 )
         )
-        .repeatCount(12)
-        .repeatDelay(1/12)
-        .repeatTransform(.rotateWithDividing(12))
+        .repeatCount(8)
+        .repeatDelay(1/8)
+        .repeatTransform(.rotateWithDividing(8))
         .animation(
             .linear(duration: 0.5)
-                .delay(0.6)
+                .delay(1)
                 .repeatForever()
         )
         .onAppear(perform: {
