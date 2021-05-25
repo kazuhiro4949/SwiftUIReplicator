@@ -35,7 +35,7 @@ struct DefaultActivityIndicator: View {
                 .fill(
                     Color
                         .activityIndicator
-                        .opacity(isAnimating ? 0.1 : 1)
+                        .opacity(isAnimating ? 1 : 0.2)
                 )
                 .frame(
                     width: 2.5 * style.scale,
@@ -49,10 +49,11 @@ struct DefaultActivityIndicator: View {
                 )
         )
         .repeatCount(8)
-        .repeatDelay(1/8)
+        .repeatDelay(0.8/8)
         .repeatTransform(.rotateWithDividing(8))
         .animation(
-            .linear(duration: 0.6)
+            .linear(duration: 0.2)
+                .delay(0.2)
                 .repeatForever()
         )
         .onAppear(perform: {
