@@ -32,10 +32,6 @@ struct DefaultActivityIndicator: View {
     var body: some View {
         Replicator(
             Capsule(style: .circular)
-                .offset(
-                    x: -1.25 * style.scale,
-                    y: -9.5 * style.scale
-                )
                 .fill(
                     Color.activityIndicator
                         .opacity(isAnimating ? 0.1 : 1)
@@ -43,6 +39,12 @@ struct DefaultActivityIndicator: View {
                 .frame(
                     width: 2.5 * style.scale,
                     height: 6 * style.scale
+                )
+                .transformEffect(
+                    .init(
+                        translationX: -1.25 * style.scale,
+                        y:  -9.5 * style.scale
+                    )
                 )
         )
         .repeatCount(8)
