@@ -8,12 +8,12 @@
 
 import SwiftUI
 
-struct DefaultActivityIndicator: View {
-    enum Style {
+public struct DefaultActivityIndicator: View {
+    public enum Style {
         case medium
         case large
         
-        var scale: CGFloat {
+        public var scale: CGFloat {
             switch self {
             case .medium: return 1
             case .large: return 1.5
@@ -23,13 +23,13 @@ struct DefaultActivityIndicator: View {
     
     @State private var isAnimating = false
     
-    let style: Style
+    public let style: Style
     
     public init(style: Style) {
         self.style = style
     }
     
-    var body: some View {
+    public var body: some View {
         Replicator(
             Capsule(style: .circular)
                 .fill(
