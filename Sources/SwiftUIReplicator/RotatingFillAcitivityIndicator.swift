@@ -26,7 +26,7 @@ struct RotatingFillAcitivityIndicator: View {
                 .transformEffect(
                     .init(
                         translationX: -5,
-                        y:  16
+                        y:  -25
                     )
                 )
         )
@@ -35,7 +35,7 @@ struct RotatingFillAcitivityIndicator: View {
         .repeatTransform(.rotateWithDividing(8))
         .animation(
             .linear(duration: 0.2)
-                .delay(1.4)
+                .delay(1.8)
                 .repeatForever(autoreverses: false)
             
         )

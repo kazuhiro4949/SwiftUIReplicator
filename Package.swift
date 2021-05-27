@@ -4,12 +4,16 @@ import PackageDescription
 let package = Package(
     name: "SwiftUIReplicator",
     platforms: [
-        .iOS(.v14)
+        .iOS(.v14),
+        .macOS(.v11)
     ],
     products: [
         .library(name: "SwiftUIReplicator", targets: ["SwiftUIReplicator"])
     ],
     targets: [
-        .target(name: "SwiftUIReplicator", path: "SwiftUIReplicator")
+        .target(name: "SwiftUIReplicator"),
+        .testTarget(
+            name: "SwiftUIReplicatorTests",
+            dependencies: ["SwiftUIReplicator"])
     ]
 )
