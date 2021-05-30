@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+/// An activity indicator with fading circle
 public struct CircleFedeIndicator: View {
     @State private var foregroundColor = Color.clear
     

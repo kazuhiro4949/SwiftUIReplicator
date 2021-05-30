@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+/// An activity indicator with scaling rectangle
 public struct RectangleScaleIndicator: View {
     @State private var scale: CGFloat = 1
     private let count: Int = 3

@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+/// An activity indicator with scaling circle
 public struct CircleScaleIndicator: View {
     @State private var scale: CGFloat = 1
     

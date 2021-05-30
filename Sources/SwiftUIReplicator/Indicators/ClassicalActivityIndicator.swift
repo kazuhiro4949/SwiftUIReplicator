@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+/// An activity indicator like UIActivtyIndicator.
 public struct ClassicalActivityIndicator: View {
     public enum Style {
         case medium
@@ -26,6 +27,9 @@ public struct ClassicalActivityIndicator: View {
     private let style: Style
     private let count = 8
     
+    
+    /// Creates an indicator with style
+    /// - Parameter style: medium or large
     public init(style: Style) {
         self.style = style
     }

@@ -16,23 +16,23 @@ public struct SwiftUIReplicatorContent: LibraryContentProvider {
         )
         LibraryItem(
             ClassicalActivityIndicator(style: .large),
-            title: "like UIActivityIndicator"
+            title: "An activity indicator like UIActivtyIndicator."
         )
         LibraryItem(
             CircleRotateIndicator(),
-            title: "Indicator: rectangle & scale"
+            title: "An activity indicator with rotating circle"
         )
         LibraryItem(
             CircleBounceIndicator(),
-            title: "Activity Indicator: circle & bounce"
+            title: "An activity indicator with bouncing circle"
         )
         LibraryItem(
             CircleFedeIndicator(),
-            title: "Activity Indicator: circle & fade"
+            title: "An activity indicator with fading circle"
         )
         LibraryItem(
             RectangleScaleIndicator(),
-            title: "Indicator: rectangle & scale"
+            title: "An activity indicator with scaling rectangle"
         )
         LibraryItem(
             Replicator(Circle().frame(width: 5, height: 5))

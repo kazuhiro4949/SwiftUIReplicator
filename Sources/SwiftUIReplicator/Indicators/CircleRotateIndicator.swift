@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+/// An activity indicator with rotating circle
 public struct CircleRotateIndicator: View {
     @State private var scale: CGFloat = 0.8
     

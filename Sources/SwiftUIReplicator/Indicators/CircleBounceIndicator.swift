@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+/// An activity indicator with bouncing circle
 public struct CircleBounceIndicator: View {
     @State private var offsetY: CGFloat = 0
     
