@@ -129,24 +129,3 @@ public struct Replicator<Content: View>: View {
         @Published var animation: Animation?
     }
 }
-
-
-#if canImport(UIKit)
-import UIKit
-#elseif canImport(AppKit)
-import AppKit
-#endif
-
-extension Color {
-    #if canImport(UIKit)
-    var native: UIColor { UIColor(self) }
-    #elseif canImport(AppKit)
-    var native: NSColor { NSColor(self) }
-    #endif
-    
-    var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
-        var _rgba = (CGFloat(), CGFloat(), CGFloat(), CGFloat())
-        native.getRed(&_rgba.0, green: &_rgba.1, blue: &_rgba.2, alpha: &_rgba.3)
-        return _rgba
-    }
-}
