@@ -9,7 +9,7 @@
 import SwiftUI
 
 public struct RotatedCircleActivityIndicator: View {
-    @State private var isAnimating = false
+    @State private var scale: CGFloat = 0.8
     
     public init() {}
     
@@ -23,12 +23,9 @@ public struct RotatedCircleActivityIndicator: View {
                     width: 6,
                     height: 6
                 )
-                .scaleEffect(CGSize(width: isAnimating ? 1.4 : 0.8, height:  isAnimating ? 1.4: 0.8))
+                .scaleEffect(CGSize(width: scale, height: scale))
                 .transformEffect(
-                    .init(
-                        translationX: -5,
-                        y:  16
-                    )
+                    .init(translationX: -5, y:  16)
                 )
         )
         .repeatCount(8)
@@ -40,9 +37,7 @@ public struct RotatedCircleActivityIndicator: View {
                 .repeatForever()
         )
         .onAppear(perform: {
-            withAnimation {
-                self.isAnimating = true
-            }
+            self.scale = 1.4
         })
     }
 }

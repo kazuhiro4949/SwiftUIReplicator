@@ -9,7 +9,7 @@
 import SwiftUI
 
 public struct CircleActivityIndicator: View {
-    @State private var isAnimating = false
+    @State private var offsetY: CGFloat = 0
     
     public init() {}
     
@@ -18,16 +18,16 @@ public struct CircleActivityIndicator: View {
             Circle()
                 .fill(Color.accentColor)
                 .frame(width: 10, height: 10)
-                .offset(x: 0, y: isAnimating ? -5 : 0)
+                .offset(x: 0, y: offsetY)
         )
         .repeatCount(4)
-        .repeatTransform(CGAffineTransform(translationX: 18, y: 0))
+        .repeatTransform(.init(translationX: 18, y: 0))
         .repeatDelay(0.6/4)
         .animation(.linear(duration: 0.3)
                     .delay(0.3)
                     .repeatForever())
         .onAppear(perform: {
-            self.isAnimating = true
+            self.offsetY = -5
         })
         .offset(x: -26, y: 0)
     }

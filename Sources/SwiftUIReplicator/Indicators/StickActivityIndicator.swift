@@ -9,7 +9,8 @@
 import SwiftUI
 
 public struct StickActivityIndicator: View {
-    @State private var isAnimating = false
+    @State private var scale: CGFloat = 1
+    private let count: Int = 3
     
     public init() {}
     
@@ -18,16 +19,16 @@ public struct StickActivityIndicator: View {
             Rectangle()
                 .fill(Color.accentColor)
                 .frame(width: 8, height: 26)
-                .scaleEffect(CGSize(width: 1.0, height: isAnimating ? 1.5 : 1.0))
+                .scaleEffect(CGSize(width: 1.0, height: scale))
         )
-        .repeatCount(3)
-        .repeatTransform(CGAffineTransform(translationX: 12, y: 0))
-        .repeatDelay(0.5/3)
+        .repeatCount(count)
+        .repeatTransform(.init(translationX: 12, y: 0))
+        .repeatDelay(0.5/Double(count))
         .animation(.easeInOut(duration: 0.5)
                     .delay(0.2)
                     .repeatForever())
         .onAppear(perform: {
-            self.isAnimating = true
+            self.scale = 1.5
         })
         .offset(x: -12, y: 0)
     }

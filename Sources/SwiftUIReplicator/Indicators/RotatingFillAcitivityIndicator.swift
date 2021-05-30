@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct RotatingFillAcitivityIndicator: View {
-    @State private var isAnimating = false
+    @State private var foregroundColor = Color.clear
     
     var body: some View {
         Replicator(
@@ -17,7 +17,7 @@ struct RotatingFillAcitivityIndicator: View {
                 .strokeBorder(Color.accentColor, lineWidth: 0)
                 .background(
                     Circle()
-                        .foregroundColor(isAnimating ? .accentColor : .clear)
+                        .foregroundColor(foregroundColor)
                 )
                 .frame(
                     width: 12,
@@ -35,14 +35,12 @@ struct RotatingFillAcitivityIndicator: View {
         .repeatTransform(.rotateWithDividing(10))
         .animation(
             .linear(duration: 1)
-                .delay(1)
+                .delay(0.9)
                 .repeatForever(autoreverses: false)
             
         )
         .onAppear(perform: {
-            withAnimation {
-                self.isAnimating = true
-            }
+            self.foregroundColor = .accentColor
         })
     }
 }

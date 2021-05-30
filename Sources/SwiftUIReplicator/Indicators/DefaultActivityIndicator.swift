@@ -21,9 +21,10 @@ public struct DefaultActivityIndicator: View {
         }
     }
     
-    @State private var isAnimating = false
+    @State private var fillColor = Color(white: 0.9, opacity: 1)
     
-    public let style: Style
+    private let style: Style
+    private let count = 8
     
     public init(style: Style) {
         self.style = style
@@ -32,9 +33,7 @@ public struct DefaultActivityIndicator: View {
     public var body: some View {
         Replicator(
             Capsule(style: .circular)
-                .fill(
-                    isAnimating ? Color(white: 0.9, opacity: 1) : Color.activityIndicator
-                )
+                .fill(fillColor)
                 .frame(
                     width: 2.5 * style.scale,
                     height: 6 * style.scale
@@ -46,13 +45,12 @@ public struct DefaultActivityIndicator: View {
                     )
                 )
         )
-        .repeatCount(8)
-        .repeatDelay(1/8)
+        .repeatCount(count)
+        .repeatDelay(1/Double(CGFloat(count)))
         .repeatTransform(
-            CGAffineTransform(
-                rotationAngle: CGFloat(
-                    (2.0*Double.pi)/8
-                )
+            .init(
+                rotationAngle:
+                    (2.0*CGFloat.pi)/CGFloat(count)
             )
         )
         .animation(
@@ -61,7 +59,7 @@ public struct DefaultActivityIndicator: View {
                 .repeatForever()
         )
         .onAppear(perform: {
-            self.isAnimating = true
+            self.fillColor = Color.activityIndicator
         })
     }
 }
