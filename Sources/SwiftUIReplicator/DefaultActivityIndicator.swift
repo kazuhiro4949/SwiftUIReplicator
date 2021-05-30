@@ -33,9 +33,7 @@ public struct DefaultActivityIndicator: View {
         Replicator(
             Capsule(style: .circular)
                 .fill(
-                    Color
-                        .activityIndicator
-                        .opacity(isAnimating ? 1 : 0.2)
+                    isAnimating ? Color(white: 0.9, opacity: 1) : Color.activityIndicator
                 )
                 .frame(
                     width: 2.5 * style.scale,
@@ -49,11 +47,17 @@ public struct DefaultActivityIndicator: View {
                 )
         )
         .repeatCount(8)
-        .repeatDelay(0.8/8)
-        .repeatTransform(.rotateWithDividing(8))
+        .repeatDelay(1/8)
+        .repeatTransform(
+            CGAffineTransform(
+                rotationAngle: CGFloat(
+                    (2.0*Double.pi)/8
+                )
+            )
+        )
         .animation(
             .linear(duration: 0.2)
-                .delay(0.2)
+                .delay(0.3)
                 .repeatForever()
         )
         .onAppear(perform: {
@@ -64,6 +68,6 @@ public struct DefaultActivityIndicator: View {
 
 struct ActivityIndicator_Previews: PreviewProvider {
     static var previews: some View {
-        DefaultActivityIndicator(style: .medium)
+        DefaultActivityIndicator(style: .large)
     }
 }

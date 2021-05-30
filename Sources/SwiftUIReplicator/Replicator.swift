@@ -20,11 +20,22 @@ public struct Replicator<Content: View>: View {
     public var body: some View {
         var repeatTransform = RepeatTransform(value: viewModel.repeatTransform)
         var repeatDelay = RepeatDelay(value: viewModel.repeatDelay)
+        var repeatColor = RepeatColorOffset(
+            value: (viewModel.instanceRedOffset, viewModel.instanceBlueOffset, viewModel.instanceGreenOffset)
+        )
+        
         
         ZStack {
             ForEach(0..<viewModel.repeatCount) { index in
                 let content = self.content
+                let color = repeatColor.increment()
                 content
+                    .colorMultiply(
+                        Color(
+                            red: color.red,
+                            green: color.green,
+                            blue: color.blue, opacity: 1)
+                    )
                     .transformEffect(repeatTransform.increment())
                     .animation(
                         viewModel
@@ -55,6 +66,22 @@ public struct Replicator<Content: View>: View {
         return self
     }
     
+    
+    public func instanceRedOffset(_ instanceRedOffset: Double) -> Replicator<Content> {
+        viewModel.instanceRedOffset = instanceRedOffset
+        return self
+    }
+    
+    public func instanceGreenOffset(_ instanceGreenOffset: Double) -> Replicator<Content> {
+        viewModel.instanceGreenOffset = instanceGreenOffset
+        return self
+    }
+    public func instanceBlueOffset(_ instanceBlueOffset: Double) -> Replicator<Content> {
+        viewModel.instanceBlueOffset = instanceBlueOffset
+        return self
+    }
+    
+    
     private struct RepeatTransform {
         var value: CGAffineTransform
         var pointer: CGAffineTransform?
@@ -76,11 +103,50 @@ public struct Replicator<Content: View>: View {
             return pointer
         }
     }
+    
+    private struct RepeatColorOffset {
+        var value: (red: Double, blue: Double, green: Double)
+        var pointer: (red: Double, blue: Double, green: Double)?
+        
+        mutating func increment() -> (red: Double, blue: Double, green: Double) {
+            let pointer = pointer.flatMap {
+                (min(max(0, $0.red + value.red), 1),
+                 min(max(0, $0.blue + value.blue), 1),
+                 min(max(0, $0.green + value.green), 1))
+            } ?? (1, 1, 1)
+            self.pointer = pointer
+            return pointer
+        }
+    }
 
     private class ReplicatorViewModel: ObservableObject {
         @Published var repeatCount: Int = 0
         @Published var repeatDelay: TimeInterval = 0.0
         @Published var repeatTransform: CGAffineTransform = .identity
+        @Published var instanceRedOffset: Double = 0
+        @Published var instanceBlueOffset: Double = 0
+        @Published var instanceGreenOffset: Double = 0
         @Published var animation: Animation?
+    }
+}
+
+
+#if canImport(UIKit)
+import UIKit
+#elseif canImport(AppKit)
+import AppKit
+#endif
+
+extension Color {
+    #if canImport(UIKit)
+    var native: UIColor { UIColor(self) }
+    #elseif canImport(AppKit)
+    var native: NSColor { NSColor(self) }
+    #endif
+    
+    var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
+        var _rgba = (CGFloat(), CGFloat(), CGFloat(), CGFloat())
+        native.getRed(&_rgba.0, green: &_rgba.1, blue: &_rgba.2, alpha: &_rgba.3)
+        return _rgba
     }
 }

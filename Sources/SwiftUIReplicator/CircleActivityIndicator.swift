@@ -36,6 +36,7 @@ public struct CircleActivityIndicator: View {
 struct CircleActivityIndicator_Previews: PreviewProvider {
     static var previews: some View {
         CircleActivityIndicator()
+            .previewDevice("iPhone 12 Pro Max")
             .accentColor(.gray)
     }
 }

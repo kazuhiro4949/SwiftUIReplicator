@@ -32,11 +32,11 @@ public struct RotatedCircleActivityIndicator: View {
                 )
         )
         .repeatCount(8)
-        .repeatDelay(1/8)
+        .repeatDelay(2/8)
         .repeatTransform(.rotateWithDividing(8))
         .animation(
-            .linear(duration: 0.5)
-                .delay(1)
+            .linear(duration: 0.4)
+                .delay(0.5)
                 .repeatForever()
         )
         .onAppear(perform: {

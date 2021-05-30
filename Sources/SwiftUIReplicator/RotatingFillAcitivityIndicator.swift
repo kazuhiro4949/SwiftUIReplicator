@@ -14,28 +14,28 @@ struct RotatingFillAcitivityIndicator: View {
     var body: some View {
         Replicator(
             Circle()
-                .strokeBorder(Color.accentColor, lineWidth: 0.5)
+                .strokeBorder(Color.accentColor, lineWidth: 0)
                 .background(
                     Circle()
                         .foregroundColor(isAnimating ? .accentColor : .clear)
                 )
                 .frame(
-                    width: 10,
-                    height: 10
+                    width: 12,
+                    height: 12
                 )
                 .transformEffect(
                     .init(
                         translationX: -5,
-                        y:  -25
+                        y:  -30
                     )
                 )
         )
-        .repeatCount(8)
-        .repeatDelay(0.2)
-        .repeatTransform(.rotateWithDividing(8))
+        .repeatCount(10)
+        .repeatDelay(0.1)
+        .repeatTransform(.rotateWithDividing(10))
         .animation(
-            .linear(duration: 0.2)
-                .delay(1.8)
+            .linear(duration: 1)
+                .delay(1)
                 .repeatForever(autoreverses: false)
             
         )
@@ -50,5 +50,6 @@ struct RotatingFillAcitivityIndicator: View {
 struct RotatingFillAcitivityIndicator_Previews: PreviewProvider {
     static var previews: some View {
         RotatingFillAcitivityIndicator()
+            .accentColor(.gray)
     }
 }

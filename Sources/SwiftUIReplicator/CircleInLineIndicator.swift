@@ -36,6 +36,7 @@ struct CircleInLineIndicator: View {
 struct CircleInLineIndicator_Previews: PreviewProvider {
     static var previews: some View {
         CircleInLineIndicator()
+            .previewDevice("iPhone 12 Pro Max")
             .accentColor(.red)
     }
 }
