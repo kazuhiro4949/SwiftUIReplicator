@@ -8,10 +8,12 @@
 
 import SwiftUI
 
-struct CircleFedeIndicator: View {
+public struct CircleFedeIndicator: View {
     @State private var foregroundColor = Color.clear
     
-    var body: some View {
+    public init() {}
+    
+    public var body: some View {
         Replicator(
             Circle()
                 .strokeBorder(Color.accentColor, lineWidth: 0)

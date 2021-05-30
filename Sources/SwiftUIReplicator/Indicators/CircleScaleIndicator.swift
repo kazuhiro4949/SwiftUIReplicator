@@ -8,13 +8,15 @@
 
 import SwiftUI
 
-struct CircleScaleIndicator: View {
+public struct CircleScaleIndicator: View {
     @State private var scale: CGFloat = 1
     
     private let count: Int = 4
     private let size: CGFloat = 10
     
-    var body: some View {
+    public init() {}
+    
+    public var body: some View {
         Replicator(
             Circle()
                 .fill(Color.accentColor)
