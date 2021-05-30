@@ -70,6 +70,7 @@ public struct Replicator<Content: View>: View {
     }
 }
 
+//MARK:- ViewModel
 
 extension Replicator {
     private class ReplicatorViewModel: ObservableObject {
@@ -81,7 +82,11 @@ extension Replicator {
         @Published var instanceGreenOffset: Double = 0
         @Published var animation: Animation?
     }
-    
+}
+
+// MARK:- Utility
+
+extension Replicator {
     private struct Incrementer {
         var repeatTransform: RepeatTransform
         var repeatDelay: RepeatDelay
@@ -91,7 +96,11 @@ extension Replicator {
             repeatTransform = RepeatTransform(value: viewModel.repeatTransform)
             repeatDelay = RepeatDelay(value: viewModel.repeatDelay)
             repeatColor = RepeatColorOffset(
-                value: (viewModel.instanceRedOffset, viewModel.instanceBlueOffset, viewModel.instanceGreenOffset)
+                value: .init(
+                    red: viewModel.instanceRedOffset,
+                    blue: viewModel.instanceBlueOffset,
+                    green: viewModel.instanceGreenOffset
+                )
             )
         }
         
@@ -135,17 +144,30 @@ extension Replicator {
     }
     
     private struct RepeatColorOffset {
-        var value: (red: Double, blue: Double, green: Double)
-        var pointer: (red: Double, blue: Double, green: Double)?
+        var value: ColorComponents
+        var pointer: ColorComponents?
         
-        mutating func increment() -> (red: Double, blue: Double, green: Double) {
-            let pointer = pointer.flatMap {
-                (min(max(0, $0.red + value.red), 1),
-                 min(max(0, $0.blue + value.blue), 1),
-                 min(max(0, $0.green + value.green), 1))
-            } ?? (1, 1, 1)
+        mutating func increment() -> ColorComponents {
+            let pointer = pointer.flatMap { $0.appending(value) } ?? .white
             self.pointer = pointer
             return pointer
+        }
+    }
+    
+    struct ColorComponents {
+        let red: Double
+        let blue: Double
+        let green: Double
+        
+        static var white: ColorComponents {
+            ColorComponents(red: 1, blue: 1, green: 1)
+        }
+        
+        func appending(_ components: ColorComponents) -> ColorComponents {
+            let red = min(max(0, self.red + components.red), 1)
+            let blue = min(max(0, self.blue + components.blue), 1)
+            let green = min(max(0, self.green + components.blue), 1)
+            return .init(red: red, blue: blue, green: green)
         }
     }
 }
