@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  ActivityIndicator.swift
 //  
 //
 //  Created by Kazuhiro Hayashi on 2021/05/30.
@@ -42,7 +42,7 @@ public struct ActivityIndicator: View {
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
+struct ActivityIndicator_Previews: PreviewProvider {
     static var previews: some View {
         ActivityIndicator(style: .classicalLarge)
     }

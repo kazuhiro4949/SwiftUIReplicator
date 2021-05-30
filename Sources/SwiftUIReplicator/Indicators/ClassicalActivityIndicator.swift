@@ -64,7 +64,7 @@ public struct ClassicalActivityIndicator: View {
     }
 }
 
-struct ActivityIndicator_Previews: PreviewProvider {
+struct ClassicalActivityIndicator_Previews: PreviewProvider {
     static var previews: some View {
         ClassicalActivityIndicator(style: .large)
     }
