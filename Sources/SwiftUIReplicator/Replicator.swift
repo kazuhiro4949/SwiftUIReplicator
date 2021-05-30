@@ -18,29 +18,18 @@ public struct Replicator<Content: View>: View {
     }
     
     public var body: some View {
-        var repeatTransform = RepeatTransform(value: viewModel.repeatTransform)
-        var repeatDelay = RepeatDelay(value: viewModel.repeatDelay)
-        var repeatColor = RepeatColorOffset(
-            value: (viewModel.instanceRedOffset, viewModel.instanceBlueOffset, viewModel.instanceGreenOffset)
-        )
-        
+        var incrementer = Incrementer(viewModel: viewModel)
         
         ZStack {
             ForEach(0..<viewModel.repeatCount) { index in
                 let content = self.content
-                let color = repeatColor.increment()
                 content
-                    .colorMultiply(
-                        Color(
-                            red: color.red,
-                            green: color.green,
-                            blue: color.blue, opacity: 1)
-                    )
-                    .transformEffect(repeatTransform.increment())
+                    .colorMultiply(incrementer.color())
+                    .transformEffect(incrementer.transform())
                     .animation(
                         viewModel
                             .animation?
-                            .delay(repeatDelay.increment())
+                            .delay(incrementer.delay())
                     )
             }
         }
@@ -66,7 +55,6 @@ public struct Replicator<Content: View>: View {
         return self
     }
     
-    
     public func instanceRedOffset(_ instanceRedOffset: Double) -> Replicator<Content> {
         viewModel.instanceRedOffset = instanceRedOffset
         return self
@@ -80,7 +68,49 @@ public struct Replicator<Content: View>: View {
         viewModel.instanceBlueOffset = instanceBlueOffset
         return self
     }
+}
+
+
+extension Replicator {
+    private class ReplicatorViewModel: ObservableObject {
+        @Published var repeatCount: Int = 0
+        @Published var repeatDelay: TimeInterval = 0.0
+        @Published var repeatTransform: CGAffineTransform = .identity
+        @Published var instanceRedOffset: Double = 0
+        @Published var instanceBlueOffset: Double = 0
+        @Published var instanceGreenOffset: Double = 0
+        @Published var animation: Animation?
+    }
     
+    private struct Incrementer {
+        var repeatTransform: RepeatTransform
+        var repeatDelay: RepeatDelay
+        var repeatColor: RepeatColorOffset
+        
+        init(viewModel: ReplicatorViewModel) {
+            repeatTransform = RepeatTransform(value: viewModel.repeatTransform)
+            repeatDelay = RepeatDelay(value: viewModel.repeatDelay)
+            repeatColor = RepeatColorOffset(
+                value: (viewModel.instanceRedOffset, viewModel.instanceBlueOffset, viewModel.instanceGreenOffset)
+            )
+        }
+        
+        mutating func color() -> Color {
+            let color = repeatColor.increment()
+            return Color(
+                red: color.red,
+                green: color.green,
+                blue: color.blue, opacity: 1)
+        }
+        
+        mutating func transform() -> CGAffineTransform {
+            repeatTransform.increment()
+        }
+        
+        mutating func delay() -> TimeInterval {
+            repeatDelay.increment()
+        }
+    }
     
     private struct RepeatTransform {
         var value: CGAffineTransform
@@ -117,15 +147,5 @@ public struct Replicator<Content: View>: View {
             self.pointer = pointer
             return pointer
         }
-    }
-
-    private class ReplicatorViewModel: ObservableObject {
-        @Published var repeatCount: Int = 0
-        @Published var repeatDelay: TimeInterval = 0.0
-        @Published var repeatTransform: CGAffineTransform = .identity
-        @Published var instanceRedOffset: Double = 0
-        @Published var instanceBlueOffset: Double = 0
-        @Published var instanceGreenOffset: Double = 0
-        @Published var animation: Animation?
     }
 }
