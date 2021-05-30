@@ -1,5 +1,5 @@
 //
-//  CircleActivityIndicator.swift
+//  CircleBounceIndicator.swift
 //  SwiftUIReplicator
 //
 //  Created by Kazuhiro Hayashi on 2021/05/23.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-public struct CircleActivityIndicator: View {
+public struct CircleBounceIndicator: View {
     @State private var offsetY: CGFloat = 0
     
     public init() {}
@@ -35,7 +35,7 @@ public struct CircleActivityIndicator: View {
 
 struct CircleActivityIndicator_Previews: PreviewProvider {
     static var previews: some View {
-        CircleActivityIndicator()
+        CircleBounceIndicator()
             .previewDevice("iPhone 12 Pro Max")
             .accentColor(.gray)
     }

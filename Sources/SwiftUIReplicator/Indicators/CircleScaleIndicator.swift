@@ -1,5 +1,5 @@
 //
-//  CircleInLineIndicator.swift
+//  CircleScaleIndicator.swift
 //  SwiftUIReplicator
 //
 //  Created by Kazuhiro Hayashi on 2021/05/24.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CircleInLineIndicator: View {
+struct CircleScaleIndicator: View {
     @State private var scale: CGFloat = 1
     
     private let count: Int = 4
@@ -36,7 +36,7 @@ struct CircleInLineIndicator: View {
 
 struct CircleInLineIndicator_Previews: PreviewProvider {
     static var previews: some View {
-        CircleInLineIndicator()
+        CircleScaleIndicator()
             .previewDevice("iPhone 12 Pro Max")
             .accentColor(.red)
     }

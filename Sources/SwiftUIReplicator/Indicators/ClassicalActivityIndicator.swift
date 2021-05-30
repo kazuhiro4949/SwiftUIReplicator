@@ -1,5 +1,5 @@
 //
-//  DefaultActivityIndicator.swift
+//  ClassicalActivityIndicator.swift
 //  SwiftUIReplicator
 //
 //  Created by Kazuhiro Hayashi on 2021/05/23.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-public struct DefaultActivityIndicator: View {
+public struct ClassicalActivityIndicator: View {
     public enum Style {
         case medium
         case large
@@ -66,6 +66,6 @@ public struct DefaultActivityIndicator: View {
 
 struct ActivityIndicator_Previews: PreviewProvider {
     static var previews: some View {
-        DefaultActivityIndicator(style: .large)
+        ClassicalActivityIndicator(style: .large)
     }
 }

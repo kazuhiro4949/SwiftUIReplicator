@@ -11,15 +11,15 @@ import SwiftUI
 public struct SwiftUIReplicatorContent: LibraryContentProvider {
     public var views: [LibraryItem] {
         LibraryItem(
-            DefaultActivityIndicator(style: .medium),
+            ClassicalActivityIndicator(style: .medium),
             title: "Indicator like UIActivityIndicator"
         )
         LibraryItem(
-            CircleActivityIndicator(),
+            CircleBounceIndicator(),
             title: "Indicator: four balls in line"
         )
         LibraryItem(
-            StickActivityIndicator(),
+            RectangleScaleIndicator(),
             title: "Indicator: scaling sticks"
         )
         LibraryItem(

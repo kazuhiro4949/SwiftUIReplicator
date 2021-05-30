@@ -1,5 +1,5 @@
 //
-//  StickActivityIndicator.swift
+//  RectangleScaleIndicator.swift
 //  SwiftUIReplicator
 //
 //  Created by Kazuhiro Hayashi on 2021/05/24.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-public struct StickActivityIndicator: View {
+public struct RectangleScaleIndicator: View {
     @State private var scale: CGFloat = 1
     private let count: Int = 3
     
@@ -36,7 +36,7 @@ public struct StickActivityIndicator: View {
 
 struct StickActivityIndicator_Previews: PreviewProvider {
     static var previews: some View {
-        StickActivityIndicator()
+        RectangleScaleIndicator()
             .accentColor(.gray)
     }
 }

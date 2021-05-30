@@ -1,5 +1,5 @@
 //
-//  RotatingFillAcitivityIndicator.swift
+//  CircleFedeIndicator.swift
 //  SwiftUIReplicator
 //
 //  Created by Kazuhiro Hayashi on 2021/05/26.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct RotatingFillAcitivityIndicator: View {
+struct CircleFedeIndicator: View {
     @State private var foregroundColor = Color.clear
     
     var body: some View {
@@ -47,7 +47,7 @@ struct RotatingFillAcitivityIndicator: View {
 
 struct RotatingFillAcitivityIndicator_Previews: PreviewProvider {
     static var previews: some View {
-        RotatingFillAcitivityIndicator()
+        CircleFedeIndicator()
             .accentColor(.gray)
     }
 }

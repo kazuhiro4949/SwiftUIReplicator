@@ -1,5 +1,5 @@
 //
-//  RotatedCircleActivityIndicator.swift
+//  CircleRotateIndicator.swift
 //  SwiftUIReplicator
 //
 //  Created by Kazuhiro Hayashi on 2021/05/25.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-public struct RotatedCircleActivityIndicator: View {
+public struct CircleRotateIndicator: View {
     @State private var scale: CGFloat = 0.8
     
     public init() {}
@@ -44,6 +44,6 @@ public struct RotatedCircleActivityIndicator: View {
 
 struct RotatedCircleActivityIndicator_Previews: PreviewProvider {
     static var previews: some View {
-        RotatedCircleActivityIndicator()
+        CircleRotateIndicator()
     }
 }
