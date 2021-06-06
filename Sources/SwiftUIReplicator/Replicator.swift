@@ -8,8 +8,10 @@
 
 import SwiftUI
 
+
+/// A view that creates a specified number of subview copies with varying geometric, temporal, and color transformations.
 public struct Replicator<Content: View>: View {
-    let content: Content
+    private let content: Content
     
     @ObservedObject private var viewModel = ReplicatorViewModel()
     
@@ -35,35 +37,62 @@ public struct Replicator<Content: View>: View {
         }
     }
     
+    
+    /// The number of copies to create, including the source views.
+    /// - Parameter repeatCount: The number of copies
+    /// - Returns: self
     public func repeatCount(_ repeatCount: Int) -> Replicator<Content> {
         viewModel.repeatCount = repeatCount
         return self
     }
     
+    
+    /// Specifies the aniation delay, in seconds, between replicated copies
+    /// - Parameter repeatDelay: repeat delay
+    /// - Returns: self
     public func repeatDelay(_ repeatDelay: TimeInterval) -> Replicator<Content> {
         viewModel.repeatDelay = repeatDelay
         return self
     }
     
+    
+    /// sets the animation to each view.
+    /// - Parameter animation: animation
+    /// - Returns: self
     public func animation(_ animation: Animation) -> Replicator<Content> {
         viewModel.animation = animation
         return self
     }
     
+    
+    /// The transform matrix applied to the previous instance to produce the current instance.
+    /// - Parameter repeatTransform: transform
+    /// - Returns: self
     public func repeatTransform(_ repeatTransform: CGAffineTransform) -> Replicator<Content> {
         viewModel.repeatTransform = repeatTransform
         return self
     }
     
+    
+    /// Defines the offset added to the red component of the color for each replicated instance..
+    /// - Parameter instanceRedOffset: red offset
+    /// - Returns: self
     public func instanceRedOffset(_ instanceRedOffset: Double) -> Replicator<Content> {
         viewModel.instanceRedOffset = instanceRedOffset
         return self
     }
     
+    /// Defines the offset added to the green component of the color for each replicated instance..
+    /// - Parameter instanceGreenOffset: green offset
+    /// - Returns: self
     public func instanceGreenOffset(_ instanceGreenOffset: Double) -> Replicator<Content> {
         viewModel.instanceGreenOffset = instanceGreenOffset
         return self
     }
+    
+    /// Defines the offset added to the blue component of the color for each replicated instance..
+    /// - Parameter instanceBlueOffset: blue offset
+    /// - Returns: self
     public func instanceBlueOffset(_ instanceBlueOffset: Double) -> Replicator<Content> {
         viewModel.instanceBlueOffset = instanceBlueOffset
         return self
