@@ -34,28 +34,9 @@ dependencies: [
 
 You can use a SwiftUIReplicator object to build complex layouts based on a single source view that is replicated with transformation rules that can affect the position, rotation color, and time.
 
-SwiftUIReplicator has many usecases. One of them is "Loading Indicator".
-
-## UseCase: Loading Indicator 
-SwiftUI doesn't have a view like UIActivityIndicator. SwiftUIReplicator has build-in loading indicator.
-
-| classical | circle bounce | circle rotation | circle scaling | rectangle scaling |
-|:------------:|:------------:|:------------:|:------------:|:------------:|
-| ![sample_5](https://user-images.githubusercontent.com/18320004/120912569-4bf5e900-c6cb-11eb-9066-a983683de8bb.gif) | ![sample_4](https://user-images.githubusercontent.com/18320004/120912583-68922100-c6cb-11eb-810d-3d7b61efdbe4.gif) | ![sample6](https://user-images.githubusercontent.com/18320004/120912593-7e074b00-c6cb-11eb-85b3-999b749b5211.gif) | ![sample7](https://user-images.githubusercontent.com/18320004/120912601-8eb7c100-c6cb-11eb-9f15-6936c4b5b097.gif) | ![sample8](https://user-images.githubusercontent.com/18320004/120912615-b0b14380-c6cb-11eb-837f-012a52e99f88.gif) |
-
-If you want to use a classical indicator, set ```ActivityIndicator``` with ```.classicalLarge``` in body.
-
-```swift
-struct ContentView: View {
-    var body: some View {
-        ActivityIndicator(style: .classicalLarge)
-            .accentColor(.gray)
-    }
-}
-```
 
 ## Replicator
-All of them are base on ```Replicator```.
+All of them are based on ```Replicator```.
 
 The following code shows a simple example: a red square is added to a replicator view with an instance count of 5. The position of each replicated instance is offset along the x axis so that it appears to the right of the previous instance. The blue and green color channels are offset so that their values reach 0 at the final instance.
 
@@ -76,6 +57,27 @@ The result of the code above is a row of five squares, with colors graduating fr
 
 <img src="https://user-images.githubusercontent.com/18320004/120913051-2a96fc00-c6cf-11eb-96e3-af4d71fed307.png" width=200 />
 
+
+
+## UseCase: Loading Indicator 
+SwiftUIReplicator has many usecases. One of them is "Loading Indicator".
+
+SwiftUI doesn't have a view like UIActivityIndicator. SwiftUIReplicator has build-in loading indicator.
+
+| classical | circle bounce | circle rotation | circle scaling | rectangle scaling |
+|:------------:|:------------:|:------------:|:------------:|:------------:|
+| ![sample_5](https://user-images.githubusercontent.com/18320004/120912569-4bf5e900-c6cb-11eb-9066-a983683de8bb.gif) | ![sample_4](https://user-images.githubusercontent.com/18320004/120912583-68922100-c6cb-11eb-810d-3d7b61efdbe4.gif) | ![sample6](https://user-images.githubusercontent.com/18320004/120912593-7e074b00-c6cb-11eb-85b3-999b749b5211.gif) | ![sample7](https://user-images.githubusercontent.com/18320004/120912601-8eb7c100-c6cb-11eb-9f15-6936c4b5b097.gif) | ![sample8](https://user-images.githubusercontent.com/18320004/120912615-b0b14380-c6cb-11eb-837f-012a52e99f88.gif) |
+
+If you want to use a classical indicator, set ```ActivityIndicator``` with ```.classicalLarge``` in body.
+
+```swift
+struct ContentView: View {
+    var body: some View {
+        ActivityIndicator(style: .classicalLarge)
+            .accentColor(.gray)
+    }
+}
+```
 
 # License
 
