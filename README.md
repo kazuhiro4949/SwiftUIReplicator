@@ -3,7 +3,7 @@
 SwiftUIReplicator is a container view that creates a specified number of view copies with varying geometric, temporal, and color transformations.
 It refers to CAReplicatorLayer.
 
-You can replicate View with Replicator specifing transformation rules.
+You can replicate view with Replicator specifing transformation rules.
 
 # Feature
 - [x] Pure SwiftUI library
