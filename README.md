@@ -72,6 +72,8 @@ Replicator(
 .offset(x: -84)
 ```
 
+The result of the code above is a row of five squares, with colors graduating from white to red, as shown in the figure.
+
 <img src="https://user-images.githubusercontent.com/18320004/120913051-2a96fc00-c6cf-11eb-96e3-af4d71fed307.png" width=200 />
 
 
