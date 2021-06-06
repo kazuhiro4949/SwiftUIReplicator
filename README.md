@@ -20,7 +20,7 @@ You can copy a view with ```Replicator``` specifying transformation rules.
 SwiftUIReplicator supports only SwiftPM.
 
 ## Swift Package Manager
-The Swift Package Manager is a tool for automating the distribution of Swift code and is integrated into the swift compiler. It is in early development, but Alamofire does support its use on supported platforms.
+Swift Package Manager is a tool for automating the distribution of Swift code and is integrated into the swift compiler. It is in early development, but Alamofire does support its use on supported platforms.
 
 Once you have your Swift package set up, adding SwiftUIReplicator as a dependency is as easy as adding it to the dependencies value of your Package.swift.
 
