@@ -12,7 +12,7 @@ You can copy a view with ```Replicator``` specifying transformation rules.
  
 # Requirements
 
-- iOS 14.5+
+- iOS 14.0+
 - Xcode 12.0+
 - Swift 5.3
 
