@@ -34,7 +34,7 @@ dependencies: [
 
 You can use a SwiftUIReplicator object to build complex layouts based on a single source view that is replicated with transformation rules that can affect the position, rotation color, and time.
 
-There are many usecases with SwiftUIReplicator. One of them is a loading indicator.
+SwiftUIReplicator has many usecases. One of them is a loading indicator.
 
 ## UseCase: Loading Indicator 
 SwiftUI doesn't have a view like UIActivityIndicator. SwiftUIReplicator has build-in loading indicator.
