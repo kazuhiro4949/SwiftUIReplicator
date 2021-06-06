@@ -32,7 +32,7 @@ dependencies: [
 
 # Usage
 
-You can use a SwiftUIReplicator object to build complex layouts based on a single source view that is replicated with transformation rules that can affect the position, rotation color, and time.
+You can use a this library to build complex layouts based on a single source view that is replicated with transformation rules that can affect the position, rotation color, and time.
 
 
 ## Replicator
