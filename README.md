@@ -6,7 +6,7 @@ The concept is based on CAReplicatorLayer.
 You can replicate View with Replicator specifing transformation rules.
 
 # Feature
-- [x] pure SwiftUI library
+- [x] Pure SwiftUI library
 - [x] CAReplicatorLayer like container view
 - [x] UIKit like loading indicator
  
