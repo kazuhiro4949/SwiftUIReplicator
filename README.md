@@ -62,7 +62,7 @@ The result of the code above is a row of five squares, with colors graduating fr
 ## UseCase: Loading Indicator 
 SwiftUIReplicator has many usecases. One of them is "Loading Indicator".
 
-SwiftUI doesn't have a view like UIActivityIndicator. SwiftUIReplicator has build-in loading indicators.
+SwiftUI doesn't have UIActivityIndicator like view. SwiftUIReplicator has build-in loading indicators.
 
 | classical | circle bounce | circle rotation | circle scaling | rectangle scaling |
 |:------------:|:------------:|:------------:|:------------:|:------------:|
