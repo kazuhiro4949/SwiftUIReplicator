@@ -36,7 +36,7 @@ You can use a SwiftUIReplicator object to build complex layouts based on a singl
 
 
 ## Replicator
-All of them are based on ```Replicator```.
+```Replicator``` is the most important in SwiftUIReplicator.
 
 The following code shows a simple example: a red square is added to a replicator view with an instance count of 5. The position of each replicated instance is offset along the x axis so that it appears to the right of the previous instance. The blue and green color channels are offset so that their values reach 0 at the final instance.
 
