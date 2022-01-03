@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+@available(iOS 14.0, *)
 public struct SwiftUIReplicatorContent: LibraryContentProvider {
     public var views: [LibraryItem] {
         LibraryItem(
